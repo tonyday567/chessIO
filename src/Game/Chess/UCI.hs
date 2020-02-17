@@ -2,11 +2,11 @@ module Game.Chess.UCI (
   -- * Exceptions
   UCIException(..)
   -- * The Engine data type
-, Engine, name, author
+, Engine(..)
   -- * Starting a UCI engine
 , start, start'
   -- * Engine options
-, Option(..), options, getOption, setOptionSpinButton, setOptionString
+, Option(..), getOption, setOptionSpinButton, setOptionString
   -- * Manipulating the current game information
 , isready
 , currentPosition, setPosition, addPly
@@ -264,7 +264,7 @@ isready :: Engine -> IO ()
 isready e@Engine{isReady} = do
   send e "isready"
   takeMVar isReady
-  
+
 send :: Engine -> Builder -> IO ()
 send Engine{inH, procH} b = do
   hPutBuilder inH (b <> "\n")

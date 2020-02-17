@@ -1,5 +1,6 @@
-resolver: lts-13.21
+resolver: lts-14.13
 packages:
 - .
+
 extra-deps:
 - o-clock-1.0.0.1

@@ -14,7 +14,7 @@ import Data.List
 import Data.List.Extra
 import Game.Chess
 import Game.Chess.Polyglot.Book (PolyglotBook, defaultBook, readPolyglotFile, bookPlies, bookPly)
-import Game.Chess.UCI
+import Game.Chess.UCI hiding (outputStrLn)
 import System.Console.Haskeline hiding (catch, handle)
 import System.Exit
 import System.Environment
